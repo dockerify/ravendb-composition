@@ -5,10 +5,7 @@ services:
     image: ravendb/ravendb
     ports:
       - '8080:8080'
-    environment:
-      - RAVEN_License_Eula_Accepted=true
-      - RAVEN_Security_UnsecuredAccessAllowed=PrivateNetwork
-      - RAVEN_Setup_Mode=None
+    env_file: .ravendb.env
     networks:
       - default
 
