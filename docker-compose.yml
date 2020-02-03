@@ -5,7 +5,11 @@ services:
     image: ravendb/ravendb
     ports:
       - '8080:8080'
+      - '38888:38888'
     env_file: .ravendb.env
+    volumes:
+      - './ravendb/config:/opt/RavenDB/config'
+      - './ravendb/data:/opt/RavenDB/Server/RavenData'
     networks:
       - default
 
